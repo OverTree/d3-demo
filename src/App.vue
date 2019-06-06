@@ -1,15 +1,17 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <router-view v-if="!$route.meta.keepAlive"></router-view>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
-  name: "app",
+  name: 'app',
+  created() {
+    var s = '123123';
+    s.startsWith('123');
+    s.padStart('123');
+  },
   components: {
     HelloWorld
   }
@@ -18,7 +20,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
